@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8081}  # Usa el puerto 8080 si PORT no está definido
+  port: ${PORT:9090}  # Usa el puerto 8080 si PORT no está definido
 
 eureka:
   client:
@@ -9,6 +9,6 @@ eureka:
       default-zone: http://localhost:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    non-secure-port: ${PORT:8081}  # Usa el mismo puerto definido por la variable de entorno PORT
+    non-secure-port: ${PORT:9090}  # Usa el mismo puerto definido por la variable de entorno PORT
     metadata-map:
       instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
