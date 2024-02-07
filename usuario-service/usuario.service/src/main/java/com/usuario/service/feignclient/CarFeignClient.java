@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(name = "car-service", url = "http://localhost:8002")
+//Con API GATEWAY ya no hace falta la url
+//@FeignClient(name = "car-service", url = "http://localhost:8002")
+@FeignClient(name = "car-service")
 public interface CarFeignClient {
 
     @PostMapping("/car")
