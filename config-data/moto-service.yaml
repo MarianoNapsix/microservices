@@ -1,5 +1,5 @@
 number:
-  to-port: 9090
+  to-port: ${port:0}
 server:
   port: ${number.to-port}
 eureka:
