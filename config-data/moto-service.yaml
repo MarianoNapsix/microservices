@@ -1,5 +1,7 @@
+number:
+  to-port: ${random.int[1024,65535]}
 server:
-  port: ${random.int[1024,65535]}
+  port: ${number.to-port}
 eureka:
   client:
     fetch-registry: true
@@ -7,7 +9,7 @@ eureka:
     service-url:
       default-zone: http://localhost:8761/eureka
   instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
-    non-secure-port: ${server.port}
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${number.to-port}}
+    non-secure-port: ${number.to-port}
     metadata-map:
-      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${number.to-port}}
