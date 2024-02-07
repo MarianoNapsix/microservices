@@ -1,8 +1,5 @@
 server:
   port: ${PORT:${random.int[1024,65535]}}
-spring:
-  application:
-    name: car-service
 eureka:
   client:
     fetch-registry: true
