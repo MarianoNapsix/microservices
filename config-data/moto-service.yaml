@@ -1,5 +1,6 @@
 server:
-  port: ${random.int[1024,65535]}
+  port: ${PORT:8081}  # Usa el puerto 8080 si PORT no está definido
+
 eureka:
   client:
     fetch-registry: true
@@ -7,7 +8,7 @@ eureka:
     service-url:
       default-zone: http://localhost:8761/eureka
   instance:
-    instance-id: ${spring.application.name}:${server.port}
-    non-secure-port: ${server.port}
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    non-secure-port: ${PORT:8081}  # Usa el mismo puerto definido por la variable de entorno PORT
     metadata-map:
-      instanceId: ${spring.application.name}:${server.port}
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
