@@ -8,3 +8,4 @@ eureka:
       default-zone: http://localhost:8761/eureka
     instance:
       instance-id: ${spring.application.name}
+      non-secure-port: ${server.port}
